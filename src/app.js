@@ -1,19 +1,19 @@
-const express = require('express')
-const router = require('./router')
+import express from 'express'
+import routes  from './router'
 
 
 class App {
   constructor(){
     this.server = express()
     this.middlewares()
-    this.router()
+    this.routes()
   }
     middlewares(){
       this.server.use(express.json())
     }
 
-    router(){
-      this.server.use(router)
+    routes(){
+      this.server.use(routes)
     }
 
   
