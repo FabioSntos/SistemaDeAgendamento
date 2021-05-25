@@ -1,6 +1,7 @@
 import express from 'express'
 import routes  from './router'
 
+import './database';
 
 class App {
   constructor(){
@@ -9,7 +10,8 @@ class App {
     this.routes()
   }
     middlewares(){
-      this.server.use(express.json())
+      this.server.use(express.json());
+      
     }
 
     routes(){

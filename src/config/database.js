@@ -5,10 +5,8 @@ module.exports = {
   password: 'docker',
   database: 'sistema',
   define: {
-    timestaps: true,
-    undercored: true,
-    undercoredAll: true,
-
-  }
-
-}
+    timestamps: true,
+    underscored: true,
+    underscoredAll: true,
+  },
+};
