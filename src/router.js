@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
-
 import SessionControler from './app/controllers/SessionController';
+import FileController from './app/controllers/FileController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -23,10 +23,6 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 //upload de arquivos
-routes.post('/files', upload.single('file'), (req, res) => {
-  return res.json({
-    message: 'arquivo enviado',
-  });
-});
+routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;
